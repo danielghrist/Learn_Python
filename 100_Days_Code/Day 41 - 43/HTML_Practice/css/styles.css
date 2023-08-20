@@ -1,0 +1,49 @@
+/*************************************TAG SELECTORS***************************************/
+body {
+  background-color: powderblue;
+  font-family: Helvetica;
+}
+
+h1 {
+  color: #11052c;
+}
+
+h3 {
+  color: #11052c;
+}
+
+hr {
+  background-color: powderblue;
+  border-style: none;
+  border-top-style: dotted;
+  border-color: grey;
+  border-width: 5px;
+  width: 5%;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+img:hover {
+  background-color: gold;
+  height: 200px;
+  width: 200px;
+}
+
+/*************************************CLASS SELECTORS************************************/
+
+.first_hr {
+  width: 25%;
+}
+
+.circular {
+  border-radius: 100%;
+}
+
+/*************************************ID SELECTORS***************************************/
+
+#heading {
+  color: blue;
+}

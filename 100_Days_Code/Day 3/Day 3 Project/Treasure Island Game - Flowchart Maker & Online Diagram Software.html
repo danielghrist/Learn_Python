@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<!-- saved from url=(0215)https://viewer.diagrams.net/?highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Flowchart Maker &amp; Online Diagram Software</title>
+    <meta name="application-name" content="diagrams.net"><meta name="apple-mobile-web-app-title" content="diagrams.net">
+    
+    <meta name="Description" content="diagrams.net is free online diagram software for making flowcharts, process diagrams, org charts, UML, ER and network diagrams">
+    <meta name="Keywords" content="diagram, online, flow chart, flowchart maker, uml, erd">
+    <meta itemprop="name" content="diagrams.net - free flowchart maker and diagrams online">
+	<meta itemprop="description" content="diagrams.net is a free online diagramming application  and flowchart maker . You can use it to create UML, entity relationship,
+		org charts, BPMN and BPM, database schema and networks. Also possible are telecommunication network, workflow, flowcharts, maps overlays and GIS, electronic 
+		circuit and social network diagrams.">
+	<meta itemprop="image" content="https://lh4.googleusercontent.com/-cLKEldMbT_E/Tx8qXDuw6eI/AAAAAAAAAAs/Ke0pnlk8Gpg/w500-h344-k/BPMN%2Bdiagram%2Brc2f.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="theme-color" content="#d89000">
+	<script src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" defer="true" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/extensions.min.js.download"></script><script type="text/javascript" defer="true" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/stencils.min.js.download"></script><script type="text/javascript" defer="true" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/shapes-14-6-5.min.js.download"></script><script type="text/javascript" defer="true" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/api.js.download" gapi_processed="true"></script><script type="text/javascript" defer="true" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/app.min.js.download"></script><script type="text/javascript">
+		/**
+		 * URL Parameters and protocol description are here:
+		 *
+		 * https://desk.draw.io/support/solutions/articles/16000042546-what-url-parameters-are-supported
+		 *
+		 * Parameters for developers:
+		 *
+		 * - dev=1: For developers only
+		 * - test=1: For developers only
+		 * - export=URL for export: For developers only
+		 * - ignoremime=1: For developers only (see DriveClient.js). Use Cmd-S to override mime.
+		 * - createindex=1: For developers only (see etc/build/README)
+		 * - filesupport=0: For developers only (see Editor.js in core)
+		 * - savesidebar=1: For developers only (see Sidebar.js)
+		 * - pages=1: For developers only (see Pages.js)
+		 * - lic=email: For developers only (see LicenseServlet.java)
+		 * --
+		 * - networkshapes=1: For testing network shapes (temporary)
+		 */
+		var urlParams = (function()
+		{
+			var result = new Object();
+			var params = window.location.search.slice(1).split('&');
+			
+			for (var i = 0; i < params.length; i++)
+			{
+				idx = params[i].indexOf('=');
+				
+				if (idx > 0)
+				{
+					result[params[i].substring(0, idx)] = params[i].substring(idx + 1);
+				}
+			}
+			
+			return result;
+		})();
+		
+		// Forces CDN caches by passing URL parameters via URL hash
+		if (window.location.hash != null && window.location.hash.substring(0, 2) == '#P')
+		{
+			try
+			{
+				urlParams = JSON.parse(decodeURIComponent(window.location.hash.substring(2)));
+				
+				if (urlParams.hash != null)
+				{
+					window.location.hash = urlParams.hash;
+				}
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		}
+		
+		// Global variable for desktop
+		var mxIsElectron = window && window.process && window.process.type;
+
+		// Redirects page if required
+		if (urlParams['dev'] != '1')
+		{
+			(function()
+			{
+				var proto = window.location.protocol;
+				
+				if (!mxIsElectron)
+				{
+					var host = window.location.host;
+		
+					// Redirects apex, drive and rt to www
+					if (host === 'draw.io' || host === 'rt.draw.io' || host === 'drive.draw.io')
+					{
+						host = 'www.draw.io';
+					}
+					
+					var href = proto + '//' + host + window.location.href.substring(
+							window.location.protocol.length +
+							window.location.host.length + 2);
+		
+					// Redirects if href changes
+					if (href != window.location.href)
+					{
+						window.location.href = href;
+					}
+				}
+			})();
+		}
+		
+		/**
+		 * Adds meta tag to the page.
+		 */
+		function mxmeta(name, content, httpEquiv)
+		{
+			try
+			{
+				var s = document.createElement('meta');
+				
+				if (name != null) 
+				{
+					s.setAttribute('name', name);
+				}
+
+				s.setAttribute('content', content);
+				
+				if (httpEquiv != null) 
+				{
+					s.setAttribute('http-equiv', httpEquiv);
+				}
+
+			  	var t = document.getElementsByTagName('meta')[0];
+			  	t.parentNode.insertBefore(s, t);
+			}
+			catch (e)
+			{
+				// ignore
+			}
+		};
+		
+		/**
+		 * Synchronously adds scripts to the page.
+		 */
+		function mxscript(src, onLoad, id, dataAppKey, noWrite)
+		{
+			var defer = onLoad == null && !noWrite;
+			
+			if ((urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function") ||
+				onLoad != null || noWrite)
+			{
+				var s = document.createElement('script');
+				s.setAttribute('type', 'text/javascript');
+				s.setAttribute('defer', 'true');
+				s.setAttribute('src', src);
+
+				if (id != null)
+				{
+					s.setAttribute('id', id);
+				}
+				
+				if (dataAppKey != null)
+				{
+					s.setAttribute('data-app-key', dataAppKey);
+				}
+				
+				if (onLoad != null)
+				{
+					var r = false;
+				
+					s.onload = s.onreadystatechange = function()
+					{
+						if (!r && (!this.readyState || this.readyState == 'complete'))
+						{
+				      		r = true;
+				      		onLoad();
+						}
+				  	};
+				}
+			  	
+			  	var t = document.getElementsByTagName('script')[0];
+			  	
+			  	if (t != null)
+			  	{
+			  		t.parentNode.insertBefore(s, t);
+			  	}
+			}
+			else
+			{
+				document.write('<script src="' + src + '"' + ((id != null) ? ' id="' + id +'" ' : '') +
+					((dataAppKey != null) ? ' data-app-key="' + dataAppKey +'" ' : '') + '></scr' + 'ipt>');
+			}
+		};
+
+		/**
+		 * Asynchronously adds scripts to the page.
+		 */
+		function mxinclude(src)
+		{
+			var g = document.createElement('script');
+			g.type = 'text/javascript';
+			g.async = true;
+			g.src = src;
+			
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(g, s);
+		};
+		
+		/**
+		 * Adds meta tags with application name (depends on offline URL parameter)
+		 */
+		(function()
+		{
+			var name = 'diagrams.net';
+			mxmeta('apple-mobile-web-app-title', name);
+			mxmeta('application-name', name);
+
+			if (mxIsElectron)
+			{
+				mxmeta(null, 'default-src \'self\' \'unsafe-inline\'; connect-src \'self\' https://*.draw.io https://fonts.googleapis.com https://fonts.gstatic.com; img-src * data:; media-src *; font-src *; style-src-elem \'self\' \'unsafe-inline\' https://fonts.googleapis.com', 'Content-Security-Policy');
+			}
+		})();
+		
+		// Checks for local storage
+		var isLocalStorage = false;
+		
+		try
+		{
+			isLocalStorage = urlParams['local'] != '1' && typeof(localStorage) != 'undefined';
+		}
+		catch (e)
+		{
+			// ignored
+		}
+
+		var mxScriptsLoaded = false, mxWinLoaded = false;
+		
+		function checkAllLoaded()
+		{
+			if (mxScriptsLoaded && mxWinLoaded)
+			{
+				App.main();				
+			}
+		};
+		
+		var t0 = new Date();
+
+		// Changes paths for local development environment
+		if (urlParams['dev'] == '1')
+		{
+			// Used to request grapheditor/mxgraph sources in dev mode
+			var mxDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main';
+			
+			// Used to request draw.io sources in dev mode
+			var drawDevUrl = document.location.protocol + '//devhost.jgraph.com/drawio/src/main/webapp/';
+			var geBasePath = drawDevUrl + '/js/grapheditor';
+			var mxBasePath = mxDevUrl + '/mxgraph';
+			
+			if (document.location.protocol == 'file:')
+			{
+				geBasePath = './js/grapheditor';
+				mxBasePath = './mxgraph';
+				drawDevUrl = './';
+				
+				// Forces includes for dev environment in node.js
+				mxForceIncludes = true;
+			}
+
+			mxscript(drawDevUrl + 'js/PreConfig.js');
+			mxscript(drawDevUrl + 'js/diagramly/Init.js');
+			mxscript(geBasePath + '/Init.js');
+			mxscript(mxBasePath + '/mxClient.js');
+			
+			// Adds all JS code that depends on mxClient. This indirection via Devel.js is
+			// required in some browsers to make sure mxClient.js (and the files that it
+			// loads asynchronously) are available when the code loaded in Devel.js runs.
+			mxscript(drawDevUrl + 'js/diagramly/Devel.js');
+			
+			// Electron
+			if (mxIsElectron)
+			{
+				mxscript('js/diagramly/DesktopLibrary.js');
+				mxscript('js/diagramly/ElectronApp.js');
+			}
+			
+			mxscript(drawDevUrl + 'js/PostConfig.js');
+		}
+		else
+		{
+			(function()
+			{
+				var hostName = window.location.hostname;
+				
+				// Supported domains are *.draw.io and the packaged version in Quip
+				var supportedDomain = (hostName.substring(hostName.length - 8, hostName.length) === '.draw.io') ||
+					(hostName.substring(hostName.length - 13, hostName.length) === '.diagrams.net');
+					(hostName.substring(hostName.length - 17, hostName.length) === '.quipelements.com');
+				
+				function loadAppJS()
+				{
+					mxscript('js/app.min.js', function()
+					{
+						mxScriptsLoaded = true;
+						checkAllLoaded();
+						
+						if (!supportedDomain)
+						{
+							mxscript('js/PostConfig.js');
+						}
+						
+						// Electron
+						if (mxIsElectron)
+						{
+							mxscript('js/diagramly/DesktopLibrary.js', function()
+							{
+								mxscript('js/diagramly/ElectronApp.js', function()
+								{
+									mxscript('js/extensions.min.js', function()
+									{
+										mxscript('js/stencils.min.js', function()
+										{
+											mxscript('js/shapes-14-6-5.min.js', function()
+											{
+												mxscript('js/PostConfig.js');
+											});
+										});
+									});
+								});
+							});
+						}
+					});
+				};
+				
+				if (!supportedDomain || mxIsElectron)
+				{
+					mxscript('js/PreConfig.js', loadAppJS);
+				}
+				else
+				{
+					loadAppJS();
+				}
+			})();
+		}
+
+		// Adds basic error handling
+		window.onerror = function()
+		{
+			var status = document.getElementById('geStatus');
+			
+			if (status != null)
+			{
+				status.innerHTML = 'Page could not be loaded. Please try refreshing.';
+			}
+		};
+	</script>
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/plgmlhohecdddhbmmkncjdmlhcmaachm">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://viewer.diagrams.net/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://viewer.diagrams.net/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://viewer.diagrams.net/images/favicon-16x16.png">
+	<link rel="mask-icon" href="https://viewer.diagrams.net/images/safari-pinned-tab.svg" color="#d89000">
+	<link rel="stylesheet" type="text/css" href="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/croppie.min.css">
+    <link rel="stylesheet" type="text/css" href="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/grapheditor.css">
+    <link rel="preconnect" href="https://storage.googleapis.com/">
+    <link rel="canonical" href="https://app.diagrams.net/">
+	<link rel="manifest" href="https://viewer.diagrams.net/images/manifest.json">
+	<link rel="shortcut icon" href="https://viewer.diagrams.net/favicon.ico">
+	<style type="text/css">
+		body { overflow:hidden; }
+		div.picker { z-index: 10007; }
+		.geSidebarContainer .geTitle input {
+			font-size:8pt;
+			color:#606060;
+		}
+		.geBlock {
+			z-index:-3;
+			margin:100px;
+			margin-top:40px;
+			margin-bottom:30px;
+			padding:20px;
+		}
+		.geBlock h1, .geBlock h2 {
+			margin-top:0px;
+			padding-top:0px;
+		}
+		.geEditor ::-webkit-scrollbar {
+		    width:14px;
+		    height:14px;
+		}
+		.geEditor ::-webkit-scrollbar-track {
+			background-clip:padding-box;
+			border:solid transparent;
+			border-width:1px;
+		}
+		.geEditor ::-webkit-scrollbar-corner {
+			background-color:transparent;
+		}
+		.geEditor ::-webkit-scrollbar-thumb {
+			background-color:rgba(0,0,0,.1);
+			background-clip:padding-box;
+			border:solid transparent;
+			border-radius:10px;
+		}
+		.geEditor ::-webkit-scrollbar-thumb:hover{
+			background-color:rgba(0,0,0,.4);
+		}
+		.geTemplate {
+			border:1px solid transparent;
+			display:inline-block;
+			_display:inline;
+			vertical-align:top;
+			border-radius:3px;
+			overflow:hidden;
+			font-size:14pt;
+			cursor:pointer;
+			margin:5px;
+		}
+	</style>
+	<!-- Workaround for binary XHR in IE 9/10, see App.loadUrl -->
+	<!--[if (IE 9)|(IE 10)]><!-->
+		<script type="text/vbscript">
+			Function mxUtilsBinaryToArray(Binary)
+				Dim i
+				ReDim byteArray(LenB(Binary))
+				For i = 1 To LenB(Binary)
+					byteArray(i-1) = AscB(MidB(Binary, i, 1))
+				Next
+				mxUtilsBinaryToArray = byteArray
+			End Function
+		</script>
+	<!--<![endif]-->
+<style type="text/css"></style><link rel="stylesheet" href="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/common.css" charset="UTF-8" type="text/css"><script type="text/javascript" src="./Treasure Island Game - Flowchart Maker &amp; Online Diagram Software_files/MathJax.js.download"></script><style type="text/css">div.MathJax_SVG_Display { position: static; }
+span.MathJax_SVG { position: static !important; }</style><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888; display: contents}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover, .MJXp-munder {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > *, .MJXp-munder > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax_SVG .MJX-monospace {font-family: monospace}
+.MathJax_SVG .MJX-sans-serif {font-family: sans-serif}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_SVG > div {display: inline-block}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block!important}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_test {font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.MathJax_SVG_test.mjx-test-display {display: table!important}
+.MathJax_SVG_test.mjx-test-inline {display: inline!important; margin-right: -1px}
+.MathJax_SVG_test.mjx-test-default {display: block!important; clear: both}
+.MathJax_SVG_ex_box {display: inline-block!important; position: absolute; overflow: hidden; min-height: 0; max-height: none; padding: 0; border: 0; margin: 0; width: 1px; height: 60ex}
+.mjx-test-inline .MathJax_SVG_left_box {display: inline-block; width: 0; float: left}
+.mjx-test-inline .MathJax_SVG_right_box {display: inline-block; width: 0; float: right}
+.mjx-test-display .MathJax_SVG_right_box {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style>.picker-dialog-frame{width:100%;height:100%;border:0;overflow:hidden}.picker-dialog-bg{z-index:1000}.picker-dialog,.picker-dialog-bg{position:absolute;top:0;left:0;background-color:#fff}.picker-dialog{border:1px solid #acacac;width:auto;padding:0;z-index:1001;overflow:auto;box-shadow:0 4px 16px rgba(0,0,0,.2)}.picker-dialog-content{font-size:0;padding:0}.picker-dialog-buttons,.picker-dialog-title{display:none}</style></head>
+<body class="geEditor" style="background-color: rgb(255, 255, 255);"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"></defs></svg></div><div id="MathJax_Message" style="display: none;"></div>
+
+<script type="text/javascript">
+/**
+ * Main
+ */
+if (navigator.userAgent != null && navigator.userAgent.toLowerCase().
+	indexOf(' electron/') >= 0 && typeof process !== 'undefined' && process.versions.electron < 5)
+{
+	// Redirects old Electron app to latest version
+	var div = document.getElementById('geInfo');
+	
+	if (div != null)
+	{
+		div.innerHTML = '<center><h2>You are using an out of date version of this app.<br>Please download the latest version ' +
+			'<a href="https://github.com/jgraph/drawio-desktop/releases/latest" target="_blank">here</a>.</h2></center>';
+	}
+}
+else
+{
+	if (urlParams['dev'] != '1' && typeof document.createElement('canvas').getContext === "function")
+	{
+		window.addEventListener('load', function()
+		{
+			mxWinLoaded = true;
+			checkAllLoaded();
+		});
+	}
+	else
+	{
+		App.main();
+	}
+}
+</script>
+
+
+<div class="geDiagramContainer" style="inset: 0px; border: none; touch-action: none; cursor: default; overflow: auto;" tabindex="0"><svg style="left: 0px; top: 0px; width: 100%; height: 100%; display: block; min-width: 1018px; min-height: 817px; position: absolute; background-image: none; background-color: rgb(255, 255, 255);"><defs><filter id="dropShadow"><fegaussianblur in="SourceAlpha" stdDeviation="1.7" result="blur"></fegaussianblur><feoffset in="blur" dx="3" dy="3" result="offsetBlur"></feoffset><feflood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feflood><fecomposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></fecomposite><feblend in="SourceGraphic" in2="offsetBlur"></feblend></filter></defs><g transformOrigin="0 0" transform="scale(1.53,1.53)translate(43,-72)"><g></g><g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 120 L 358 154.88" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 120 L 358 154.88" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 358 163.88 L 353.5 154.88 L 362.5 154.88 Z" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 163.88 L 353.5 154.88 L 362.5 154.88 Z" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="258" y="80" width="200" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 198px; height: 1px; padding-top: 100px; margin-left: 259px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Welcome to Treasure Island. <br>Your mission is to find the treasure.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 235 L 358 279.88" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 235 L 358 279.88" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 358 288.88 L 353.5 279.88 L 362.5 279.88 Z" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 288.88 L 353.5 279.88 L 362.5 279.88 Z" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 263px; margin-left: 378px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Left</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 415.5 200 L 489.88 200" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 415.5 200 L 489.88 200" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 498.88 200 L 489.88 204.5 L 489.88 195.5 Z" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 498.88 200 L 489.88 204.5 L 489.88 195.5 Z" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 180px; margin-left: 461px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Right or <br>anything else</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 165 L 415.5 200 L 358 235 L 300.5 200 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 105px; height: 1px; padding-top: 198px; margin-left: 306px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">left or right?</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="500" y="180" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 200px; margin-left: 501px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Fall into a hole.<br>Game Over.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 370 L 358 419.88" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 370 L 358 419.88" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 358 428.88 L 353.5 419.88 L 362.5 419.88 Z" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 428.88 L 353.5 419.88 L 362.5 419.88 Z" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 410px; margin-left: 378px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Wait</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 408 330 L 489.88 330" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 408 330 L 489.88 330" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 498.88 330 L 489.88 334.5 L 489.88 325.5 Z" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 498.88 330 L 489.88 334.5 L 489.88 325.5 Z" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 310px; margin-left: 460px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 11px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Swim or <br>anything else</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 290 L 408 330 L 358 370 L 308 330 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 90px; height: 1px; padding-top: 328px; margin-left: 313px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">swim or wait</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="500" y="310" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 330px; margin-left: 501px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Attacked by trout.<br>Game Over.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 413 470 L 493.63 470" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 413 470 L 493.63 470" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 498.88 470 L 491.88 473.5 L 493.63 470 L 491.88 466.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 510 L 358 557.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 358 510 L 358 557.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 358 562.88 L 354.5 555.88 L 358 557.63 L 361.5 555.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 303 470 L 244.37 470" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 303 470 L 244.37 470" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 239.12 470 L 246.12 466.5 L 244.37 470 L 246.12 473.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 385.5 490 L 385.5 510 L 560 510 L 560 557.63" fill="none" stroke="white" stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9"></path><path d="M 385.5 490 L 385.5 510 L 560 510 L 560 557.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"></path><path d="M 560 562.88 L 556.5 555.88 L 560 557.63 L 563.5 555.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><path d="M 358 430 L 413 470 L 358 510 L 303 470 Z" fill="#ffffff" stroke="#000000" stroke-miterlimit="10" pointer-events="all"></path></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 108px; height: 1px; padding-top: 470px; margin-left: 304px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Which door?</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="500" y="450" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 470px; margin-left: 501px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Eaten by beasts.<br>Game Over.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="118" y="450" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 470px; margin-left: 119px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Burned by fire.<br>Game Over.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="298" y="564" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 584px; margin-left: 299px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">You Win!</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="428" y="450" width="40" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="428" y="450" width="40" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 460px; margin-left: 448px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Blue</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="364" y="530" width="50" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="364" y="530" width="50" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 540px; margin-left: 389px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Yellow</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="260.5" y="450" width="40" height="20" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="260.5" y="450" width="40" height="20" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 460px; margin-left: 281px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Red</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="500" y="564" width="120" height="40" rx="6" ry="6" fill="#ffffff" stroke="#000000" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 584px; margin-left: 501px;"><div style="box-sizing: border-box; font-size: 0; text-align: center; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">Game Over.</div></div></div></foreignobject></g></g><g transform="translate(0.5,0.5)" style="visibility: visible;"><rect x="414" y="490" width="50" height="30" fill="none" stroke="white" pointer-events="stroke" visibility="hidden" stroke-width="9"></rect><rect x="414" y="490" width="50" height="30" fill="none" stroke="none" pointer-events="all"></rect></g><g style=""><g><foreignobject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%"><div style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 497px; margin-left: 416px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; "><div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: nowrap; ">Anything else</div></div></div></foreignobject></g></g></g><g></g><g></g></g></svg><div style="position: fixed; overflow: hidden; box-sizing: border-box; white-space: nowrap; background-color: rgb(0, 0, 0); padding: 10px 10px 8px; left: 50%; border-radius: 20px; transition: opacity 600ms ease-in-out 0s; bottom: 20px; transform: translate(-50%, 0px); opacity: 0;"><span title="Previous Page" style="padding-left: 0px; padding-right: 4px; cursor: pointer; display: none;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA7fci493c0MW8uJ6CZks4MxQHEZL6ewAAAFZJREFUOMvdkskRgDAMA4lDwg2B7b9XOlge/KKvdsa25KFb5XlRvxXC/DNBEv8IFNjBgGdDgXtFgTyhwDXiQAUHCvwa4Uv6mR6UR+1led2mVonvl+tML45qCQNQLIx7AAAAAElFTkSuQmCC"></span><div style="display: none; vertical-align: top; font-family: Helvetica, Arial; margin-top: 8px; font-size: 14px; color: rgb(255, 255, 255);"></div><span title="Next Page" style="padding-left: 4px; padding-right: 0px; cursor: pointer; display: none;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAPFBMVEUAAAD////////////////////////////////////////////////////////////////////////////YSWgTAAAAE3RSTlMA7fci493c0MW8uJ6CZks4MxQHEZL6ewAAAFRJREFUOMvd0skRgCAQBVEFwQ0V7fxzNQP6wI05v6pZ/kyj1b7FNgik2gQzzLcAwiUAigHOTwDHK4A1CmB5BJANJG1hQ9qafYcqFlZP3IFc9eVGrR+iIgkDQRUXIAAAAABJRU5ErkJggg=="></span><span title="Zoom Out (Alt+Mousewheel)" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2N2iNAAAALXRSTlMA+vTcKMM96GRBHwXxi0YaX1HLrKWhiHpWEOnOr52Vb2xKSDcT19PKv5l/Ngdk8+viAAABJklEQVQ4y4WT2XaDMAxEvWD2nSSUNEnTJN3r//+9Sj7ILAY6L0ijC4ONYVZRpo6cByrz2YKSUGorGTpz71lPVHvT+avoB5wIkU/mxk8veceSuNoLg44IzziXjvpih72wKQnm8yc2UoiP/LAd8jQfe2Xf4Pq+2EyYIvv9wbzHHCgwxDdlBtWZOdqDfTCVgqpygQpsZaojVAVc9UjQxnAJDIBhiQv84tq3gMQCAVTxVoSibXJf8tMuc7e1TB/DCmejBNg/w1Y3c+AM5vv4w7xM59/oXamrHaLVqPQ+OTCnmMZxgz0SdL5zji0/ld6j88qGa5KIiBB6WeJGKfUKwSMKLuXgvl1TW0tm5R9UQL/efSDYsnzxD8CinhBsTTdugJatKpJwf8v+ADb8QmvW7AeAAAAAAElFTkSuQmCC"></span><span title="Zoom In (Alt+Mousewheel)" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2N2iNAAAALXRSTlMA+vTcKMM96GRBHwXxi0YaX1HLrKWhiHpWEOnOr52Vb2xKSDcT19PKv5l/Ngdk8+viAAABKElEQVQ4y4WT6WKCMBCENwkBwn2oFKvWqr3L+79es4EkQIDOH2d3Pxk2ABiJlB8JCXjqw4LikHVGLHTm3nM3UeVN5690GBBN0GwyV/3kkrUQR+WeKnREeKpzaXWd77CmJiXGfPIEI4V4yQ9TIW/ntlcMBe731Vts9w5TWG8F5j3mQI4hvrKpdGeYA7CX9qAcl650gVJartxRuhyHVghF8idQAIbFLvCLu28BsQEC6aKtCK6Pyb3JT7PmbmtNH8Ny56CotD/2qOs5cJbuffxgXmCib+xddVU5RNOhkvvkhTlFehzVWCOh3++MYElOhfdovaImnRYVmqDdsuhNp1QrBBE6uGC2+3ZNjGdg5B94oD+9uyVgWT79BwAxEBTWdOu3bWBVgsn/N/AHUD9IC01Oe40AAAAASUVORK5CYII="></span><span title="Fit" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2N2iNAAAALXRSTlMA+vTcKMM96GRBHwXxi0YaX1HLrKWhiHpWEOnOr52Vb2xKSDcT19PKv5l/Ngdk8+viAAABIUlEQVQ4y4WT2XqDIBCFBxDc9yTWNEnTJN3r+79eGT4BEbXnaubMr8dBBaM450dCQp4LWFAascGIRd48eB4cNYE7f6XjgGiCFs5c+dml6CFN6j1V6IQIlHPpdV/usKcmJcV88gQTRXjLD9Mhb+fWq8YG9/uCmTCFjeeDeY85UGKIUGUuqzN42kv7oCouq9oHamlzVR1lVfpAIu1QVRiW+sAv7r4FpAYIZZVsRXB9TP5Dfpo1d1trCgzz1iiptH/sUbdz4CzN9+mLeXHn3+hdddd4RDegsrvzwZwSs2GLPRJidAqCLTlVwaMPqpYMWjTWBB2WRW86pVkhSKyDK2bdt2tmagZG4sBD/evdLQHLEvQfAOKRoLCmG1FAB6uKmby+gz+REDn7O5+EwQAAAABJRU5ErkJggg=="></span><span title="Layers" style="padding-left: 8px; padding-right: 8px; cursor: pointer; display: none;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAmVBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+/v7///+bnZkkAAAAMnRSTlMABPr8ByiD88KsTi/rvJb272mjeUA1CuPe1M/KjVxYHxMP6KZ0S9nYzGRGGRaznpGIbzaGUf0AAAHESURBVDjLbZLZYoIwEEVDgLCjbKIgAlqXqt3m/z+uNwu1rcyDhjl3ktnYL7OY254C0VX3yWFZfzDrOClbbgKxi0YDHjwl4jbnRkXxJS/C1YP3DbBhD1n7Ex4uaAqdVDb3yJ/4J/3nJD2to/ngQz/DfUvzMp4JJ5sSCaF5oXmemgQDfDxzbi+Kq4sU+vNcuAmx94JtyOP2DD4Epz2asWSCz4Z/4fECxyNj9zC9xNLHcdPEO+awDKeSaUu0W4twZQiO2hYVisTR3RCtK/c1X6t4xMEpiGqXqVntEBLolkZZsKY4QtwH6jzq67dEHlJysB1aNOD3XT7n1UkasQN59L4yC2RELMDSeCRtz3yV22Ub3ozIUTknYx8JWqDdQxbUes98cR2kZtUSveF/bAhcedwEWmlxIkpZUy4XOCb6VBjjxHvbwo/1lBAHHi2JCr0NI570QhyHq/DhJoE2lLgyA4RVe6KmZ47O/3b86MCP0HWa73A8/C3SUc5Qc1ajt6fgpXJ+RGpMvDSchepZDOOQRcZVIKcK90x2D7etqtI+56+u6n3sPriO6nfphitR4+O2m3EbM7lh3me1FM1o+LMI887rN+s3/wZdTFlpNVJiOAAAAABJRU5ErkJggg=="></span><span title="Export" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAAA/BJREFUWAnFl0uIjWEYx885buPSuGwmSYwtwsY1ikKSNYNclmQnadgrZSPlsnBLSlaGBdNYKY0Vdi4L4zYzIqxGxmXG//d+7//0+uY7nWMiT/2/53mf+3v7vnNKpf9M5UbrDw8Pj4m+wzmeT1FBUS6Xf+YNox6reMONukijMXUTM3NmI75PyXcJPwRWg5kS7xysDLNmfEUxpx2rceNE50IlYjyRklcLf0prY+x4BTqfmx3ZUHQaO9ISGngYq38V/1EH+ECPa+QaK1u1kVBQirDMChiS3CTeIkwWvghtwhKBpZ8g1CO2B99FynVU/KowSRgQ3mlrBsVZ1awmQlS0SGbfXglfBPbdRGMm5O8RXg2P835pDCvzWjghTHETcLpZLHwS8kTCtBEK1SN83Egam8YxyVZqc+Do5qkwS+gT9grNwkUBG6cbsG/gs3BTuC/0ChCxq4QtwgzBMdwUZBPyN4Ftfi4sYPZHktbOSRlIuutRP5jYj0ueZp88xyYcS/zZoiLyQT1IA/cTj7eSlwnrhI+JnkQbCwo2Sx/2M7VJt17wdhVtgxvrpoFnAuSAbJQ97biZAlKxBfD9wgOhV+BgIR/AZtJ4kwD5PGSj7OmmekjWEy0oAQHAS3+KpBpzXqYK3UItopHpSRMno2N+cm7gDYnfRCcr3QBqriMHLJDkeyhFfiG5aVbK+8rhtP9M6QcIEJHX5Fp9NMAyQlYiu+OOJNlODCIXyka/P23bncTdiC7OydC1+v1Bsb+5r84DK8S3Rdmf5cRUFW3bXtWUSt1Rdk6G4SyJV2o1YId+vNUxr+x5yCJiapFtcxQzLjrxboGcMxvFJwEOKnLwjIbkx/sdSmeSaUY++SwTAxV+4DJT7RVwkbk46gNCsifIItuy0e9PF33Cb4homhN5YRyzL5q5V2VNkv98kqgoGTo3YF9CnMM5Y5rItFfvBSi9JulVXOgI+VwIntkt+SaZ6weQfcovJf7zpTfl86P/wAF7Fz18NeKwmvAWCaX0Z/uMHQr42ZxvR/Rxcw5xM+9J/CJq8w2gduDhmDgso/QrBH47dEXQ1IqczyHpIOfIRtnTtV7SwO1oKXKkU3fbToFGSDHtMWcaH1WBuVYnDbRFi99iqSMySdzxXckrazUh23KBVYGIcfNBkTxca0e4ATJ0KukGYVBgr/MnlhPOtQq/ksUfCbzh+EFCjtnCUoHfjhA/OsiTv2HcEvJMELp0VakZDliTmriTdPivxU4VmEhtPrGV+KJhO7ZKt0doFZh1fgZSBWIW2AGEHwg3BUWOnKtH+suqdw07tYMfglCrWPD5mw9qVYuniaXkT0OtWaSuo5LJTY1RBf+roF9X5+y/5qU+DAAAAABJRU5ErkJggg=="></span><span title="Print" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAXVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9RKvvlAAAAHnRSTlMAydnl77qbMLT093H7K4Nd4Ktn082+lYt5bkklEgP44nQSAAAApUlEQVQ4y73P2Q6DIBRF0cOgbRHHzhP//5m9mBAQKjG1cT0Yc7ITAMu1LNQgUZiQ2DYoNQ0sCQb6qgHAfRx48opq3J9AZ6xuF7uOew8Ik1OsCZRS2UAC9V+D9a+QZYxNA45YFQftPtSkATOhw7dAc0vPBwKWiIOjP0JZ0yMuQJ27g36DipOUsqRAM0dR8KD1/ILHaHSE/w8DIx09E3g/BTce6rHUB5sAPKvfF+JdAAAAAElFTkSuQmCC"></span><span title="Edit" style="padding-left: 8px; padding-right: 8px; cursor: pointer;"><img border="0" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAgVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9d3yJTAAAAKnRSTlMA+hzi3nRQWyXzkm0h2j3u54gzEgSXjlYoTBgJxL2loGpAOS3Jt7Wxm35Ga7gRAAAA6UlEQVQ4y63Q2XaCMBSF4Q0JBasoQ5DJqbXjfv8HbCK2BZNwo/8FXHx7rcMC7lQu0iX8qU/qtvAWCpoqH8dYzS0SwaV5eK/UAf8X9pd2CWKzuF5Jrftp1owXwnIGLUaL3PYndOHf4kNNXWrXK/m7CHunk7K8LE6YtBpcknwG9GKxnroY+ylBXcx4xKyx/u/EuXi509cP9V7OO1oyHnzrdFTcqLG/4ibBA5pIMr/4xvKzuQDkVy9wW8SgBFD6HDvuzMvrZcC9QlkfMzI7w64m+b4PqBMNHB05lH21PVxJo2/fBXxV4hB38PcD+5AkI4FuETsAAAAASUVORK5CYII="></span></div></div><div class="mxPopupMenu" style="display: inline; z-index: 10006; left: 277px; top: 363px; overflow: hidden auto; max-height: 917px;"><table class="mxPopupMenu"><tbody><tr class="mxPopupMenuItem"><td class="mxPopupMenuIcon"></td><td class="mxPopupMenuItem" align="left">Clear Default Style</td><td class="mxPopupMenuItem" style="padding-right: 6px; text-align: right;"><span style="color: gray;">Ctrl+Shift+R</span></td></tr></tbody></table></div></body></html>
