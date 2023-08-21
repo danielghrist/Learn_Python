@@ -31,11 +31,11 @@ resources = {
 }
 
 currency_type = {
-        "quarters": .25,
-        "dimes": .1,
-        "nickels": .05,
-        "pennies": .01
-    }
+    "quarters": .25,
+    "dimes": .1,
+    "nickels": .05,
+    "pennies": .01
+}
 
 
 # Prints a report showing the remaining resources and the current money
@@ -79,7 +79,8 @@ def get_coins(currency):
     money_received = 0
     print("Please insert coins.")
     for denomination in currency:
-        money_received += (int(input(f"How many {denomination}?: "))) * currency[denomination]
+        money_received += (
+            int(input(f"How many {denomination}?: "))) * currency[denomination]
     return money_received
 
 
@@ -87,11 +88,13 @@ def get_coins(currency):
 # then returning the total money to be added to the machine's bank
 def process_payment(payment, coffee_cost):
     if payment < coffee_cost:
-        print(f"Sorry, the cost was ${coffee_cost:.2f}.  You only paid ${payment:.2f}. Not enough money. Money refunded.")
+        print(
+            f"Sorry, the cost was ${coffee_cost:.2f}.  You only paid ${payment:.2f}. Not enough money. Money refunded.")
         return 0
     elif payment > coffee_cost:
         change = payment - coffee_cost
-        print(f"The cost was only ${coffee_cost:.2f}.  Here is your change ${change:.2f}.")
+        print(
+            f"The cost was only ${coffee_cost:.2f}.  Here is your change ${change:.2f}.")
         return payment - change
     else:
         return payment
@@ -113,7 +116,8 @@ continue_ordering = True
 
 while continue_ordering:
     # Get user choice of coffee
-    user_choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
+    user_choice = input(
+        "What would you like? (espresso/latte/cappuccino): ").lower()
     # Turn off the machine if user enters "off"
     if user_choice == "off":
         print("Machine turned off.")
@@ -132,7 +136,8 @@ while continue_ordering:
             paid_amount = process_payment(user_payment, cost)
             if paid_amount != 0:
                 total_money += paid_amount
-                resources = make_coffee(needed_ingredients, resources, user_choice)
+                resources = make_coffee(
+                    needed_ingredients, resources, user_choice)
             else:
                 continue_ordering = False
         else:
