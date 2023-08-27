@@ -68,11 +68,12 @@ while not is_game_over:
                      align="center", font=("Arial", 25, "bold"))
         turtle.write(f"The states you missed have been saved",
                      align="center", font=("Arial", 25, "bold"))
-        with open("player_save_data.txt", "w") as file:
+        with open(f"{FILE_PATH}player_save_data.txt", "w") as file:
             # for state in states:
             #     if state not in correct_answers:
             #         not_guessed_states.append(state)
-            new_data = pandas.DataFrame(not_guessed_states)
+            # Add col name for list in df
+            new_data = pandas.DataFrame({"State": not_guessed_states})
             file.write(f"{new_data}")
         break
 
