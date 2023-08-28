@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\DannyDesktop\Google Drive\Programming\Udemy\100 Days of Code - Angela Yu\Day 29\Password Generator\venv
+set VIRTUAL_ENV=C:\Users\distu\Programming\Python\Learn_Python\100_Days_Code\Day 29\Password Generator\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
