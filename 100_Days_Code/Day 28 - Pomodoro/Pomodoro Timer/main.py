@@ -1,4 +1,5 @@
 from tkinter import *
+from pathlib import Path
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -12,6 +13,8 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 350
+# Create a relative file path to the current folder the main.py file is in using pathlib module:
+REL_FILE_PATH = Path(__file__, "../").resolve()
 
 # ---------------------------- GLOBALS ------------------------------- #
 
@@ -88,7 +91,7 @@ window.config(bg=DARK_SLATE_BLUE, padx=100, pady=50)
 # Create canvas.  Used for layering images/things
 canvas = Canvas(width=200, height=224,
                 bg=DARK_SLATE_BLUE, highlightthickness=0)
-tomato_img = PhotoImage(file="tomato.png")
+tomato_img = PhotoImage(file=REL_FILE_PATH.joinpath("tomato.png"))
 canvas.create_image(100, 112, image=tomato_img)
 timer_text = canvas.create_text(
     100, 130, text="00:00", fill="white", font=(FONT_NAME, 28, "bold"))

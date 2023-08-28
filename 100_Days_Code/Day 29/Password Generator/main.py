@@ -3,12 +3,15 @@ from tkinter import *
 from tkinter import messagebox
 import pyperclip
 import json
+from pathlib import Path
 
 WINDOW_WIDTH = 450
 WINDOW_HEIGHT = 400
 LABEL_Y_PADDING = 5
 DARK_BLUE = "#2A0944"
 FONT = ("Helvetica", 11, "normal")
+# Create a relative file path to the current folder the main.py file is in using pathlib module:
+REL_FILE_PATH = Path(__file__, "../").resolve()
 
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
@@ -45,7 +48,7 @@ def generate_password():
 def search():
     website = website_entry.get()
     try:
-        with open("password_db.json", "r") as password_db:
+        with open(REL_FILE_PATH.joinpath("password_db.json"), "r") as password_db:
             saved_passwords = json.load(password_db)
 
     except FileNotFoundError:
@@ -85,7 +88,7 @@ def add_password():
             password_db = open("password_db.json", "r")
 
         except FileNotFoundError:
-            with open("password_db.json", "w") as password_db:
+            with open(REL_FILE_PATH.joinpath("password_db.json"), "w") as password_db:
                 json.dump(new_password, password_db, indent=4)
 
         else:
@@ -94,7 +97,7 @@ def add_password():
             # Update old data
             data.update(new_password)
             # Update Data JSON File
-            with open("password_db.json", "w") as password_db:
+            with open(REL_FILE_PATH.joinpath("password_db.json"), "w") as password_db:
                 json.dump(data, password_db, indent=4)
 
         finally:
@@ -132,7 +135,7 @@ main_frame.pack()
 # Create canvas
 canvas = Canvas(master=main_frame, width=120, height=200,
                 bg=DARK_BLUE, highlightthickness=0)
-logo_img = PhotoImage(file="logo.png")
+logo_img = PhotoImage(file=REL_FILE_PATH.joinpath("logo.png"))
 canvas.create_image(60, 100, image=logo_img)
 canvas.grid(row=0, column=1, pady=LABEL_Y_PADDING)
 
