@@ -4,7 +4,7 @@ import json
 
 
 # with open("website.html", encoding="utf-8") as file:
-    # website_html = file.read()
+# website_html = file.read()
 
 # soup = BeautifulSoup(website_html, "html.parser")
 
@@ -51,25 +51,51 @@ import json
 
 URL = "https://www.empireonline.com/movies/features/best-movies-2/"
 
-# Scrape Website
+# Request the website and store the html into the empire_top_100_movies variable:
 response = requests.get(URL)
 empire_top_100_movies = response.text
 
-# Scrape website and pull the h3 tags with class=jsx-4245974604 which are the titles of the movies
+#### WEBSITE CHANGED NOW USES H3 WITH CLASS=listicleItem_listicle-item__title__hW_Kn FOR TITLE ####
 soup = BeautifulSoup(empire_top_100_movies, "html.parser")
-website_json = json.loads(soup.find("script", type="application/json").text)
+
+# Get the name of the movies in a list while getting rid of the <number)> and strip whitespace:
+tags = soup.findAll(
+    name="h3", class_="listicleItem_listicle-item__title__hW_Kn")
+movie_names = [name.getText().split(")")[1].strip() for name in tags]
+
+# Reverse the list of movie names as the website starts at the end:
+movie_names.reverse()
+
+# Loop through the movie names and at a number for each one and print title:
+for i, name in enumerate(movie_names, start=1):
+    print(f"{i:02}. {name}")
+
+
+### OLD CODE ###
+# URL = "https://www.empireonline.com/movies/features/best-movies-2/"
+
+# Request the website and store the html into the empire_top_100_movies variable:
+# response = requests.get(URL)
+# empire_top_100_movies = response.text
+
+# Scrape website and pull the h3 tags with class=jsx-4245974604 which are the titles of the movies:
+# soup = BeautifulSoup(empire_top_100_movies, "html.parser")
+# website_json = json.loads(soup.find("script", type="application/json").text) # ???
+
 
 # Movie titles found in this dictionary and key:
 # movies["props"]["pageProps"]["apolloState"]["ImageMeta:5e6224d408baaa5a8143279c"]["titleText"]
-top_100_movies = []
-for item in website_json["props"]["pageProps"]["apolloState"]:
-    if website_json["props"]["pageProps"]["apolloState"][item].get("titleText") is not None:
-        top_100_movies.append(website_json["props"]["pageProps"]["apolloState"][item].get("titleText"))
+# top_100_movies = []
+# for item in website_json["props"]["pageProps"]["apolloState"]:
+#     if website_json["props"]["pageProps"]["apolloState"][item].get("titleText") is not None:
+#         top_100_movies.append(
+#             website_json["props"]["pageProps"]["apolloState"][item].get("titleText"))
 
-print(top_100_movies)
+# print(top_100_movies)
 
 # Save
-with open("movies.txt", "w", encoding="utf8") as file:
-    # for i in range(len(top_100_movies), 0, -1):
-    file.writelines([f"{top_100_movies[i]}\n" for i in range(len(top_100_movies) - 1, -1, -1)])
-
+# with open("movies.txt", "w", encoding="utf8") as file:
+#     # for i in range(len(top_100_movies), 0, -1):
+#     file.writelines([f"{top_100_movies[i]}\n" for i in range(
+#         len(top_100_movies) - 1, -1, -1)])
+### OLD CODE ###
