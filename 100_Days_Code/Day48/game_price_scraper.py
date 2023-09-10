@@ -1,16 +1,30 @@
+'''
+Program to scrape game price data for loose, CIB, and new versions of the game and save to csv for that date. The console that is being scraped can be changed by changing the CONSOLE constant.
+'''
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver import ActionChains
-from selenium.webdriver import Keys
+# from selenium.webdriver import ActionChains
+# from selenium.webdriver import Keys
+from datetime import datetime
 import time
-import pprint
 import pandas as pd
 
-# URL with filtered search for Wii game on price charting site:
-URL = "https://www.pricecharting.com/console/wii?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-07&show-images=true"
 
+### -----BEGIN CONSTANTS----- ###
+# Constant to use for which console we want to search for:
+CONSOLE = "wii"
 # Amount to pause between each scroll action:
-SCROLL_PAUSE_TIME = .3
+SCROLL_PAUSE_TIME = .5
+# URL with filtered search for Wii game on price charting site:
+URL = f"https://www.pricecharting.com/console/{CONSOLE}?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-07&show-images=true"
+### -----END CONSTANTS----- ###
+
+
+# Get current date as a string in YYYY_MM_DD format:
+def getStringDate() -> str:
+    '''Returns the current date in YYYY_MM_DD format.'''
+    return datetime.today().strftime("%Y-%m-%d")
+
 
 # Get Chrome options and set up brower to not auto close:
 chrome_options = webdriver.ChromeOptions()
@@ -40,7 +54,7 @@ while True:
 
 game_list = []
 
-# Obtain all row data in the #games_table:
+# Obtain all row data in the #games_table on the website:
 game_data_row = driver.find_elements(
     By.CSS_SELECTOR, "#games_table tbody tr")
 # print(game_data_row)
@@ -69,6 +83,8 @@ for row in game_data_row:
 
 game_df = pd.DataFrame(game_list)
 print(game_df)
+game_df.to_csv(f"{getStringDate()}-{CONSOLE.title()}-Price_List.csv")
+
 
 # print(game_dict)
 # print()
