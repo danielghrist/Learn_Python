@@ -1,6 +1,7 @@
 '''
 Script to merge my personal collection with the price data I have scraped to get up to date pricing info so I know what is worth selling and what isn't.
 '''
+import re
 import pandas as pd
 # import difflib
 from pathlib import Path
@@ -26,14 +27,17 @@ console_collection.rename(columns={"Title": "title"}, inplace=True)
 
 ### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
 # Try to use str.replace with regex to replace non word characters in title column of collections:
-# console_collection["title"] = console_collection["title"].str.replace(
-#     r"\W+", "", regex=True).astype("str")
-console_collection["title"].replace(
-    to_replace="[\W]", value="", regex=True, inplace=True)
+console_collection["title"] = console_collection["title"].str.replace(
+    r"\W+", "", regex=True).astype("str")
 pricing["title"].replace(
     to_replace="[\W]", value="", regex=True, inplace=True)
 ### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
 
+### ----- CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
+# Trying out extract:
+# console_collection["title"] = console_collection["title"].str.extractall(
+#     pat=r"([\w]+)", flags=re.S)
+### ----- CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
 
 ### Try to fuzzy match the title names in the data: ###
 # Create duplicate column to retain title name from collections:
