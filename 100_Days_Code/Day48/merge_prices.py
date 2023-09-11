@@ -2,9 +2,8 @@
 Script to merge my personal collection with the price data I have scraped to get up to date pricing info so I know what is worth selling and what isn't.
 '''
 import pandas as pd
-import difflib
+# import difflib
 from pathlib import Path
-
 
 # Console to get prices for:
 CONSOLE = "Wii"
@@ -19,17 +18,22 @@ collection = pd.read_csv(REL_FILE_PATH.joinpath(
 # Load pricing data as Pandas Dataframe:
 pricing = pd.read_csv(REL_FILE_PATH.joinpath("2023-09-10-Wii-Price_List.csv"))
 
-# Print first few lines of each new DataFrame:
-# print(collection.head())
-# print(pricing.head())
-
 # Create DataFrame with only includes the CONSOLE I want to view prices for:
-console_collection = collection.query(f"Platform == '{CONSOLE}'")
-
+console_collection = collection.query(f"Platform == '{CONSOLE}'").reset_index()
 
 # Rename the Title column header in the collection data to match the pricing data:
 console_collection.rename(columns={"Title": "title"}, inplace=True)
-# print(console_collection)
+
+### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
+# Try to use str.replace with regex to replace non word characters in title column of collections:
+# console_collection["title"] = console_collection["title"].str.replace(
+#     r"\W+", "", regex=True).astype("str")
+console_collection["title"].replace(
+    to_replace="[\W]", value="", regex=True, inplace=True)
+pricing["title"].replace(
+    to_replace="[\W]", value="", regex=True, inplace=True)
+### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
+
 
 ### Try to fuzzy match the title names in the data: ###
 # Create duplicate column to retain title name from collections:
@@ -41,9 +45,14 @@ console_collection.rename(columns={"Title": "title"}, inplace=True)
 
 
 # Merge the new console_collection with the pricing data by fuzzy matching title:
-merged_with_prices = pd.merge(console_collection, pricing, on="title", )
+merged_with_prices = pd.merge(
+    console_collection, pricing, on="title", how="left")  # INCLUDES ALL GAMES IN LEFT W/OUT PRICING
 print(merged_with_prices[["Platform", "title",
       "loose_price", "cib_price", "new_price"]])
 
+# print(merged_with_prices)
+# print(merged_with_prices[["title"]])
+
+# Save merged DataFrame into CSV:
 merged_with_prices[["Platform", "title",
-                    "loose_price", "cib_price", "new_price"]].to_csv("Wii_Collection_Pricing.csv")
+                    "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}_Collection_Pricing.csv"))

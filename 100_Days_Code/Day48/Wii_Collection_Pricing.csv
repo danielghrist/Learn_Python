@@ -1,65 +1,131 @@
 ,Platform,title,loose_price,cib_price,new_price
-0,Wii,Alien Syndrome,$5.14,$6.03,$12.71
-1,Wii,Arc Rise Fantasia,$63.00,$69.66,$111.40
-2,Wii,Calling,$50.97,$52.00,$74.88
-3,Wii,Centipede: Infestation,$9.57,$9.86,$15.95
-4,Wii,City Builder,$5.42,$7.58,$13.69
-5,Wii,Cruise Ship Vacation Games,$4.57,$6.42,$9.64
-6,Wii,Cursed Mountain,$18.13,$18.49,$34.25
-7,Wii,Dokapon Kingdom,$61.57,$81.22,$193.75
-8,Wii,Domino Rally,$5.99,$7.69,$14.74
-9,Wii,Donkey Kong Country Returns,$13.00,$13.49,$30.00
-10,Wii,Epic Mickey,$5.56,$6.29,$17.09
-11,Wii,F1 2009,$39.14,$39.95,$126.90
-12,Wii,Fishing Master World Tour,$6.25,$8.62,$23.29
-13,Wii,Fortune Street,$23.49,$25.50,$50.50
-14,Wii,Ghost Squad,$9.09,$9.55,$19.45
-15,Wii,Godzilla Unleashed,$32.74,$35.00,$89.96
-16,Wii,Guilty Gear XX Accent Core,$12.09,$19.10,$44.11
-17,Wii,Harvest Moon: Animal Parade,$24.99,$28.13,$53.63
-18,Wii,Haunted House,$6.77,$6.80,$15.50
-19,Wii,Indianapolis 500 Legends,$3.83,$7.15,$7.74
-20,Wii,Klonoa,$27.02,$40.38,$116.88
-21,Wii,Kororinpa Marble Mania,$18.47,$19.98,$35.00
-22,Wii,Madden NFL 13,$9.90,$10.08,$29.99
-23,Wii,Manhunt 2,$13.49,$14.44,$48.41
-24,Wii,Marble Saga Kororinpa,$12.67,$12.93,$22.21
-25,Wii,Mario Kart Wii,$25.62,$27.42,$49.98
-26,Wii,Metroid Prime Trilogy,$66.09,$76.71,$160.89
-27,Wii,Metroid: Other M,$11.25,$14.35,$24.97
-28,Wii,Monster Hunter Tri,$6.33,$7.08,$21.12
-29,Wii,Muramasa: The Demon Blade,$30.89,$30.93,$49.99
-30,Wii,New Super Mario Bros. Wii,$19.95,$24.80,$58.49
-31,Wii,Nickelodeon Fit,$4.80,$6.98,$15.49
-32,Wii,No More Heroes,$11.99,$14.88,$44.00
-33,Wii,No More Heroes 2: Desperate Struggle,$18.96,$19.50,$33.14
-34,Wii,Octomania,$7.80,$8.13,$17.20
-35,Wii,Okami,$8.22,$9.54,$13.90
-36,Wii,Phantom Brave: We Meet Again,$19.37,$22.69,$32.95
-37,Wii,Red Steel,$7.37,$7.97,$19.49
-38,Wii,Red Steel 2,$10.00,$12.09,$24.13
-39,Wii,Resident Evil 4,$9.32,$9.63,$31.99
-40,Wii,Resident Evil: The Darkside Chronicles,$29.99,$35.50,$66.08
-41,Wii,Rune Factory: Frontier,$29.99,$30.14,$48.63
-42,Wii,Saint,$4.99,$6.18,$9.55
-43,Wii,Sega Superstars Tennis,$5.88,$6.41,$13.99
-44,Wii,Sengoku Basara: Samurai Heroes,$14.37,$23.78,$44.99
-45,Wii,Silent Hill: Shattered Memories,$75.00,$76.00,$145.86
-46,Wii,Sonic Unleashed,$10.38,$10.93,$27.37
-47,Wii,Sonic and the Secret Rings,$7.72,$8.06,$16.58
-48,Wii,Space Camp,$3.26,$5.15,$12.96
-49,Wii,Spyborgs,$10.00,$11.79,$21.65
-50,Wii,Super Mario All-Stars Limited Edition,$31.10,$33.09,$53.10
-51,Wii,Super Mario Galaxy,$13.19,$13.41,$43.99
-52,Wii,Super Mario Galaxy 2,$22.99,$24.40,$52.55
-53,Wii,Super Paper Mario,$14.63,$15.50,$55.51
-54,Wii,Super Smash Bros. Brawl,$13.79,$17.93,$47.99
-55,Wii,Swords,$7.94,$8.49,$14.30
-56,Wii,The Conduit,$9.08,$10.74,$19.68
-57,Wii,The House of the Dead 2 & 3 Return,$19.18,$19.51,$48.69
-58,Wii,The Kore Gang,$17.20,$18.50,$35.07
-59,Wii,The Last Story,$48.49,$59.40,$87.75
-60,Wii,Trauma Center Second Opinion,$7.69,$11.06,$31.50
-61,Wii,Valhalla Knights: Eldar Saga,$16.17,$16.56,$31.47
-62,Wii,We Ski,$4.95,$5.99,$8.87
-63,Wii,Xenoblade Chronicles,$24.67,$24.99,$60.00
+0,Wii,101In1PartyMegamix,,,
+1,Wii,ABoyAndHisBlob,,,
+2,Wii,AMFBowlingPinbusters,$6.59,$7.55,$16.73
+3,Wii,ActiveLifeMagicalCarnival,$8.24,$8.99,$12.95
+4,Wii,AlienSyndrome,$5.14,$6.03,$12.71
+5,Wii,ArcRiseFantasia,$63.00,$69.66,$111.40
+6,Wii,BattalionWarsII,,,
+7,Wii,BigBrainAcademyWiiDegree,$5.15,$5.24,$11.47
+8,Wii,Calling,$50.97,$52.00,$74.88
+9,Wii,CalvinTuckersRedneckJamboree,$4.65,$5.65,$9.97
+10,Wii,CandaceKanesCandyFactory,$4.39,$4.75,$10.21
+11,Wii,CastlevaniaJudgment,$11.38,$16.99,$27.05
+12,Wii,CentipedeInfestation,$9.57,$9.86,$15.95
+13,Wii,CityBuilder,$5.42,$7.58,$13.69
+14,Wii,Conduit2LimitedEdition,,,
+15,Wii,CruiseShipVacationGames,$4.57,$6.42,$9.64
+16,Wii,CursedMountain,$18.13,$18.49,$34.25
+17,Wii,DeadSpaceExtraction,$23.21,$25.24,$54.06
+18,Wii,DewysAdventure,$6.90,$9.04,$20.99
+19,Wii,DokaponKingdom,$61.57,$81.22,$193.75
+20,Wii,DominoRally,$5.99,$7.69,$14.74
+21,Wii,DonkeyKongCountryReturns,$13.00,$13.49,$30.00
+22,Wii,DragonBallZBudokaiTenkaichi3,$44.13,$51.00,$149.99
+23,Wii,DragonBladeWrathofFire,,,
+24,Wii,DragonQuestSwordsTheMaskedQueenAndTheTowerOfMirrors,,,
+25,Wii,EpicMickey,$5.56,$6.29,$17.09
+26,Wii,ExcitebotsTrickRacing,$8.44,$9.12,$24.99
+27,Wii,F12009,$39.14,$39.95,$126.90
+28,Wii,FinalFantasyCrystalChroniclesTheCrystalBearers,,,
+29,Wii,FinalFantasyFablesChocobosDungeon,$18.15,$19.79,$50.67
+30,Wii,FireEmblemRadiantDawn,$119.19,$119.56,$161.39
+31,Wii,FishingMasterWorldTour,$6.25,$8.62,$23.29
+32,Wii,FishingResortBundle,,,
+33,Wii,FlingSmash,$6.09,$6.73,$8.25
+34,Wii,FortuneStreet,$23.49,$25.50,$50.50
+35,Wii,FragileDreamsFarewellRuinsoftheMoon,,,
+36,Wii,GhostSquad,$9.09,$9.55,$19.45
+37,Wii,GodzillaUnleashed,$32.74,$35.00,$89.96
+38,Wii,GuiltyGearXXAccentCore,$12.09,$19.10,$44.11
+39,Wii,GunbladeNYLAMachinegunsArcadeHitsPack,$72.00,$79.95,$95.74
+40,Wii,HarvestMoonAnimalParade,$24.99,$28.13,$53.63
+41,Wii,HarvestMoonMagicalMelody,$11.92,$13.55,$22.88
+42,Wii,HarvestMoonTreeofTranquility,$13.97,$16.49,$24.95
+43,Wii,HauntedHouse,$6.77,$6.80,$15.50
+44,Wii,HelpWanted,,,
+45,Wii,Indianapolis500Legends,$3.83,$7.15,$7.74
+46,Wii,JimmieJohnsonsAnythingWithAnEngine,,,
+47,Wii,JuOnTheGrudgeHauntedHouseSimulator,,,
+48,Wii,KingOfClubs,,,
+49,Wii,KirbysDreamCollectionSpecialEdition,$43.75,$57.64,$119.98
+50,Wii,KirbysEpicYarn,$14.99,$15.26,$32.11
+51,Wii,KirbysReturnToDreamLand,,,
+52,Wii,Klonoa,$27.02,$40.38,$116.88
+53,Wii,KororinpaMarbleMania,$18.47,$19.98,$35.00
+54,Wii,LegendOfTheDragon,,,
+55,Wii,LegendOfZeldaSkywardSwordCollectorsEditionThe,,,
+56,Wii,LittleKingsStory,$22.55,$25.99,$33.72
+57,Wii,LostInShadow,,,
+58,Wii,LostinBlueShipwrecked,$9.74,$10.02,$33.00
+59,Wii,MaddenNFL13,$9.90,$10.08,$29.99
+60,Wii,Madworld,,,
+61,Wii,Manhunt2,$13.49,$14.44,$48.41
+62,Wii,MarbleSagaKororinpa,$12.67,$12.93,$22.21
+63,Wii,MarioKartWii,$25.62,$27.42,$49.98
+64,Wii,MetroidPrime3Corruption,$12.07,$13.14,$47.50
+65,Wii,MetroidPrimeTrilogy,$66.09,$76.71,$160.89
+66,Wii,MetroidOtherM,$11.25,$14.35,$24.97
+67,Wii,Monster4x4StuntRacer,$6.25,$6.38,$15.52
+68,Wii,Monster4x4WorldCircuit,,,
+69,Wii,MonsterHunterTri,$6.33,$7.08,$21.12
+70,Wii,MuramasaTheDemonBlade,$30.89,$30.93,$49.99
+71,Wii,MushroomMenTheSporeWars,$12.52,$14.97,$22.00
+72,Wii,NewSuperMarioBrosWii,$19.95,$24.80,$58.49
+73,Wii,NickelodeonFit,$4.80,$6.98,$15.49
+74,Wii,NightsJourneyOfDreams,,,
+75,Wii,NoMoreHeroes,$11.99,$14.88,$44.00
+76,Wii,NoMoreHeroes2DesperateStruggle,$18.96,$19.50,$33.14
+77,Wii,ObscureTheAftermath,$12.80,$14.41,$28.97
+78,Wii,Octomania,$7.80,$8.13,$17.20
+79,Wii,Okami,$8.22,$9.54,$13.90
+80,Wii,OopsPrankParty,$9.04,$9.25,$21.51
+81,Wii,PandorasTower,$64.12,$70.00,$98.00
+82,Wii,PhantomBraveWeMeetAgain,$19.37,$22.69,$32.95
+83,Wii,PiratesPlundARRR,,,
+84,Wii,PopnMusic,,,
+85,Wii,PunchOut,$30.00,$33.00,$66.42
+86,Wii,RedSteel,$7.37,$7.97,$19.49
+87,Wii,RedSteel2,$10.00,$12.09,$24.13
+88,Wii,ResidentEvil4,$9.32,$9.63,$31.99
+89,Wii,ResidentEvilTheDarksideChronicles,$29.99,$35.50,$66.08
+90,Wii,RuneFactoryFrontier,$29.99,$30.14,$48.63
+91,Wii,SNKArcadeClassicsV1,,,
+92,Wii,Saint,$4.99,$6.18,$9.55
+93,Wii,SamMaxSeason2BeyondTimeAndSpace,,,
+94,Wii,SamMaxSeasonOne,$12.99,$13.00,$20.37
+95,Wii,SambadeAmigo,,,
+96,Wii,SegaSuperstarsTennis,$5.88,$6.41,$13.99
+97,Wii,SengokuBasaraSamuraiHeroes,$14.37,$23.78,$44.99
+98,Wii,ShirenTheWanderer,,,
+99,Wii,SilentHillShatteredMemories,$75.00,$76.00,$145.86
+100,Wii,SinPunishmentStarSuccessor,,,
+101,Wii,SmartyPants,,,
+102,Wii,SonicAndTheBlackKnight,,,
+103,Wii,SonicUnleashed,$10.38,$10.93,$27.37
+104,Wii,SonicandtheSecretRings,$7.72,$8.06,$16.58
+105,Wii,SpaceCamp,$3.26,$5.15,$12.96
+106,Wii,Spray,,,
+107,Wii,SpyGamesElevatorMission,$4.79,$4.95,$6.56
+108,Wii,Spyborgs,$10.00,$11.79,$21.65
+109,Wii,SuperMarioAllStarsLimitedEdition,$31.10,$33.09,$53.10
+110,Wii,SuperMarioGalaxy,$13.19,$13.41,$43.99
+111,Wii,SuperMarioGalaxy2,$22.99,$24.40,$52.55
+112,Wii,SuperPaperMario,$14.63,$15.50,$55.51
+113,Wii,SuperSmashBrosBrawl,$13.79,$17.93,$47.99
+114,Wii,Swords,$7.94,$8.49,$14.30
+115,Wii,TalesOfSymphoniaDawnOfTheNewWorld,,,
+116,Wii,TenchuShadowAssassins,$6.75,$8.07,$21.82
+117,Wii,TheConduit,$9.08,$10.74,$19.68
+118,Wii,TheHouseoftheDead23Return,$19.18,$19.51,$48.69
+119,Wii,TheHouseoftheDeadOverkill,$21.07,$21.50,$39.85
+120,Wii,TheKoreGang,$17.20,$18.50,$35.07
+121,Wii,TheLastStory,$48.49,$59.40,$87.75
+122,Wii,TheLegendofZeldaTwilightPrincess,,,
+123,Wii,TraumaCenterSecondOpinion,$7.69,$11.06,$31.50
+124,Wii,ValhallaKnightsEldarSaga,$16.17,$16.56,$31.47
+125,Wii,WarioLandShakeIt,$19.39,$19.99,$59.05
+126,Wii,WeSki,$4.95,$5.99,$8.87
+127,Wii,WordjongParty,,,
+128,Wii,XenobladeChronicles,$24.67,$24.99,$60.00
+129,Wii,ZackWikiQuestForBarbarosTreasure,,,
