@@ -28,9 +28,9 @@ console_collection.rename(columns={"Title": "title"}, inplace=True)
 ### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
 # Try to use str.replace with regex to replace non word characters in title column of collections:
 console_collection["title"] = console_collection["title"].str.replace(
-    r"\W+", "", regex=True).astype("str")
+    "[^\w ]", "", regex=True).astype("str")
 pricing["title"].replace(
-    to_replace="[\W]", value="", regex=True, inplace=True)
+    to_replace="[^\w ]", value="", regex=True, inplace=True)
 ### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
 
 ### ----- CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
