@@ -1,9 +1,10 @@
 '''
-Script to merge my personal collection with the price data I have scraped to get up to date pricing info so I know what is worth selling and what isn't.
+Script to merge my personal collection data with the price data I have scraped to get up to date pricing info on each game so I know what is worth selling and what isn't.
+@author: Daniel Ghrist
 '''
-import re
+
 import pandas as pd
-# import difflib
+# import difflib  # Used to mess with fuzzy matching
 from pathlib import Path
 
 # Console to get prices for:
@@ -19,44 +20,86 @@ collection = pd.read_csv(REL_FILE_PATH.joinpath(
 # Load pricing data as Pandas Dataframe:
 pricing = pd.read_csv(REL_FILE_PATH.joinpath("2023-09-10-Wii-Price_List.csv"))
 
-# Create DataFrame with only includes the CONSOLE I want to view prices for:
+# Create DataFrame which only includes the CONSOLE I want to view prices for:
 console_collection = collection.query(f"Platform == '{CONSOLE}'").reset_index()
 
 # Rename the Title column header in the collection data to match the pricing data:
-console_collection.rename(columns={"Title": "title"}, inplace=True)
+# console_collection.rename(columns={"Title": "title"}, inplace=True)
+
 
 ### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
-# Try to use str.replace with regex to replace non word characters in title column of collections:
-console_collection["title"] = console_collection["title"].str.replace(
-    "[^\w ]", "", regex=True).astype("str")
-pricing["title"].replace(
-    to_replace="[^\w ]", value="", regex=True, inplace=True)
-### ----- BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
+### ----- FIXED SPACING ISSUE WITH REGEX [^\w ] ----- ###
+
+# Attempting to create a new column in each DataFrame to merge on:
+console_collection["Merged_Title"] = console_collection["Title"].str.replace(
+    r"[ ][aA]nd[ ]", "", regex=True).str.replace(r"[\W]", "", regex=True).str.upper()
+pricing["Merged_Title"] = pricing["title"].str.replace(
+    r"[ ][aA]nd[ ]", "", regex=True).str.replace(r"[\W]", "", regex=True).str.upper()
+
+### ----- CHECKING TO SEE WHAT NAMES CERTAIN GAMES ARE IN EACH DF ----- ###
+word = "JUON"
+filt = pricing["Merged_Title"].str.contains(word)
+print(pricing.loc[filt, ["Merged_Title", "cib_price"]])
+filt1 = console_collection["Merged_Title"].str.contains(word)
+print(console_collection.loc[filt1, "Merged_Title"])
+### ----- END CHECKING TO SEE WHAT NAMES CERTAIN GAMES ARE IN EACH DF ----- ###
+
+# # Replace & with "And" in console_collection:
+# console_collection["title"] = console_collection["title"].str.replace(
+#     "&", "And", regex=True)
+
+# # Replace "-" with " " in pricing Dataframe:
+# pricing["title"] = pricing["title"].str.replace(
+#     "-", " ", regex=True)
+
+# # Using str.replace with regex to replace non word characters in title column of collections:
+# console_collection["title"] = console_collection["title"].str.replace(
+#     "[^\w ]", "", regex=True)
+
+# pricing["title"].replace(
+#     to_replace="[^\w ]", value="", regex=True, inplace=True)
+
+# # Replace duplicate spaces with just one space:
+# console_collection["title"] = console_collection["title"].str.replace(
+#     "[ ]{2}", " ", regex=True).astype("str")
+# pricing["title"] = pricing["title"].str.replace(
+#     "[ ]{2}", " ", regex=True)
+
+# # Title Case both Dataframes "title" column:
+# console_collection["title"] = console_collection["title"].str.title()
+# pricing["title"] = pricing["title"].str.title()
+### ----- END BOTH OF THESE METHODS WORK BUT REMOVE SPACES AS WELL----- ###
+
 
 ### ----- CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
 # Trying out extract:
 # console_collection["title"] = console_collection["title"].str.extractall(
 #     pat=r"([\w]+)", flags=re.S)
-### ----- CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
+### ----- END CANNOT GET extract() OR extractall() TO WORK; NEED MORE RESEARCH ----- ###
 
-### Try to fuzzy match the title names in the data: ###
+### ----- TRYING TO MESS WITH FUZZY MATCHING THE TITLE NAMES IN THE DATA -----###
 # Create duplicate column to retain title name from collections:
 # console_collection['title'] = df2['team']
 
 # Convert team name in df2 to team name it most closely matches in df1
-# console_collection['title'] = console_collection['title'].apply(
-#     lambda x: difflib.get_close_matches(x, pricing['title'])[0])
+# console_collection['Merged_Title'] = console_collection['Merged_Title'].apply(
+#     lambda x: difflib.get_close_matches(x, pricing['Merged_Title'])[0])
+# print(console_collection["Merged_Title"])
+### ----- END TRYING TO MESS WITH FUZZY MATCHING THE TITLE NAMES IN THE DATA -----###
 
 
-# Merge the new console_collection with the pricing data by fuzzy matching title:
+# Merge the new console_collection with the pricing data by matching title:
 merged_with_prices = pd.merge(
-    console_collection, pricing, on="title", how="left")  # INCLUDES ALL GAMES IN LEFT W/OUT PRICING
-print(merged_with_prices[["Platform", "title",
-      "loose_price", "cib_price", "new_price"]])
+    console_collection, pricing, on="Merged_Title", how="left")  # ALL GAMES IN LEFT W/OUT PRICING
 
-# print(merged_with_prices)
-# print(merged_with_prices[["title"]])
+# print(merged_with_prices[["Platform", "Merged_Title",
+#       "loose_price", "cib_price", "new_price"]])
+
+filt = merged_with_prices["title"].isna()
+print(merged_with_prices.loc[filt, ["Title", "Merged_Title", "cib_price"]])
+print(merged_with_prices["title"].isna().value_counts())
+
 
 # Save merged DataFrame into CSV:
-merged_with_prices[["Platform", "title",
+merged_with_prices[["Platform", "Merged_Title",
                     "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}_Collection_Pricing.csv"))
