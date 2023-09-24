@@ -52,7 +52,7 @@ while True:
     last_height = new_height
 ### End scrolling to bottom of page ###
 
-game_list = []
+game_price_list = []
 
 # Obtain all row data in the #games_table on the website:
 game_data_row = driver.find_elements(
@@ -73,7 +73,7 @@ for row in game_data_row:
     # f"Title: {title} | Loose Price: {loose_price} | CIB Price: {cib_price} | New Price: {new_price}")
     ### DEBUG PRINT ###
     # Add data for each game to game_dict dictionary:
-    game_list.append({
+    game_price_list.append({
         "image_link": image_src,
         "title": title,
         "loose_price": loose_price,
@@ -81,7 +81,7 @@ for row in game_data_row:
         "new_price": new_price
     })
 
-game_df = pd.DataFrame(game_list)
+game_df = pd.DataFrame(game_price_list)
 print(game_df)
 game_df.to_csv(f"{getStringDate()}-{CONSOLE.title()}-Price_List.csv")
 

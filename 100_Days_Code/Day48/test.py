@@ -2,9 +2,15 @@
 Testing out different BeautifulSoup methods of finding things on websites.
 '''
 
-from bs4 import BeautifulSoup
 import requests
 import pandas as pd
+import time
+from bs4 import BeautifulSoup
+from pathlib import Path
+
+
+# Create a path to where we are running this script from to find data files:
+REL_FILE_PATH = Path(__file__, "../").resolve()
 
 WEBSITE = "https://www.pricecharting.com"
 URL = "https://www.pricecharting.com/console/nes?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-21&show-images=true"
@@ -36,38 +42,35 @@ for rows in game_rows:
         "url": url
     })
 
-first_url = games_list[0]["url"]
-print(first_url)
+# first_url = games_list[0]["url"]
+# print(first_url)
 
 game_data = []
 
+for i in range(0, len(games_list)):
+    response = requests.get(games_list[i]["url"])
+    response.raise_for_status()
+    first_game_soup = BeautifulSoup(response.text, "html.parser")
+    # game_info = soup.select(
+    #     "#game-page #full_details #attribute td.details")
 
-response = requests.get(first_url)
-response.raise_for_status()
-first_game_soup = BeautifulSoup(response.text, "html.parser")
-# game_info = soup.select(
-#     "#game-page #full_details #attribute td.details")
+    game_data.append({
+        "Title": games_list[i]["title"],
+        "Release_Date": first_game_soup.find("td", itemprop="datePublished").getText(strip=True),
+        "ESRB": first_game_soup.find("td", itemprop="contentRating").getText(strip=True),
+        "Publisher": first_game_soup.find("td", itemprop="publisher").getText(strip=True),
+        "Developer": first_game_soup.find("td", itemprop="author").getText(strip=True),
+        "Genre": first_game_soup.find("td", itemprop="genre").getText(strip=True),
+        "UPC": first_game_soup.find("td", itemprop="value").getText(strip=True),
+        # "URL": games_list[0]["url"],
+        # "PriceCharting_ID": first_game_soup.find("td", itemprop="").getText(strip=True),
+    })
+    time.sleep(3)
 
-game_data.append({
-    "Title": games_list[0]["title"],
-    "Release_Date": first_game_soup.find("td", itemprop="datePublished").getText(strip=True),
-    "ESRB": first_game_soup.find("td", itemprop="contentRating").getText(strip=True),
-    "Publisher": first_game_soup.find("td", itemprop="publisher").getText(strip=True),
-    "Developer": first_game_soup.find("td", itemprop="author").getText(strip=True),
-    "Genre": first_game_soup.find("td", itemprop="genre").getText(strip=True),
-    "UPC": first_game_soup.find("td", itemprop="value").getText(strip=True),
-    "URL": games_list[0]["url"],
-    # "PriceCharting_ID": first_game_soup.find("td", itemprop="").getText(strip=True),
-})
 print(game_data)
 
 df = pd.DataFrame(game_data)
 print(df)
 
-# for row in games_list:
-#     print(row)
-
-# print(games_list)
-# print(first_game_title)
-# print(first_game_url)
-# print(soup.prettify())
+# Save df with all game data to a csv file:
+# df.to_csv(REL_FILE_PATH.joinpath("test.csv"))
