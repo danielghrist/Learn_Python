@@ -5,18 +5,27 @@ Testing out different BeautifulSoup methods of finding things on websites.
 import requests
 import pandas as pd
 import time
+from scraper_helper import Scraper
 from bs4 import BeautifulSoup
 from pathlib import Path
 
 
 # Create a path to where we are running this script from to find data files:
 REL_FILE_PATH = Path(__file__, "../").resolve()
-
+CONSOLE = "nintendo-64"
 WEBSITE = "https://www.pricecharting.com"
-URL = "https://www.pricecharting.com/console/nes?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-21&show-images=true"
+URL = f"https://www.pricecharting.com/console/{CONSOLE}?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-21&show-images=true"
 
-request = requests.get(URL)
-soup = BeautifulSoup(request.text, "html.parser")
+# Create Scraper object for NES console to scroll to bottom of the page.
+console_scrape = Scraper(CONSOLE)
+console_scrape.scroll_to_bottom()
+html = console_scrape.get_page_source()
+console_scrape.close_webdriver()
+
+# Request the source of the webpage pointed to by URL:
+# request = requests.get(URL)
+# request.raise_for_status()
+soup = BeautifulSoup(html, "html.parser")
 
 
 ### ----- TESTING WITH JUST FINDING ONE ELEMENT USING CSS SELECTORS ----- ###
@@ -42,35 +51,37 @@ for rows in game_rows:
         "url": url
     })
 
-# first_url = games_list[0]["url"]
-# print(first_url)
+print(len(games_list))
 
 game_data = []
-
+print("Scraping data...")
 for i in range(0, len(games_list)):
-    response = requests.get(games_list[i]["url"])
-    response.raise_for_status()
-    first_game_soup = BeautifulSoup(response.text, "html.parser")
-    # game_info = soup.select(
-    #     "#game-page #full_details #attribute td.details")
+    print(f"Scraping for game #: {i:04}")
+    session_object = requests.Session()
+    response = session_object.get(games_list[i]["url"])
+    # response.raise_for_status()
+    game_soup = BeautifulSoup(response.text, "html.parser")
 
     game_data.append({
         "Title": games_list[i]["title"],
-        "Release_Date": first_game_soup.find("td", itemprop="datePublished").getText(strip=True),
-        "ESRB": first_game_soup.find("td", itemprop="contentRating").getText(strip=True),
-        "Publisher": first_game_soup.find("td", itemprop="publisher").getText(strip=True),
-        "Developer": first_game_soup.find("td", itemprop="author").getText(strip=True),
-        "Genre": first_game_soup.find("td", itemprop="genre").getText(strip=True),
-        "UPC": first_game_soup.find("td", itemprop="value").getText(strip=True),
-        # "URL": games_list[0]["url"],
-        # "PriceCharting_ID": first_game_soup.find("td", itemprop="").getText(strip=True),
+        "Release_Date": game_soup.find("td", itemprop="datePublished").getText(strip=True),
+        "ESRB": game_soup.find("td", itemprop="contentRating").getText(strip=True),
+        "Publisher": game_soup.find("td", itemprop="publisher").getText(strip=True),
+        "Developer": game_soup.find("td", itemprop="author").getText(strip=True),
+        "Genre": game_soup.find("td", itemprop="genre").getText(strip=True),
+        "UPC": game_soup.find("td", itemprop="value").getText(strip=True),
+        "URL": games_list[i]["url"],
+        # "PriceCharting_ID": game_soup.find("td", class_="title", text="PriceCharting ID:").find_next_sibling(name="td", class_="details", strip=True).getText(),
     })
-    time.sleep(3)
+    # time.sleep(2)
 
-print(game_data)
+# print(game_data)
 
 df = pd.DataFrame(game_data)
-print(df)
+print(df.head())
 
 # Save df with all game data to a csv file:
-# df.to_csv(REL_FILE_PATH.joinpath("test.csv"))
+df.to_csv(REL_FILE_PATH.joinpath(
+    f"{console_scrape.get_string_date()}-{console_scrape.get_console()}-Game_List.csv"))
+
+print("Finished Scraping and saving to csv file.")
