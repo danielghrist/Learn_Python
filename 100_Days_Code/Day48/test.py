@@ -4,7 +4,7 @@ Testing out different BeautifulSoup methods of finding things on websites.
 
 import requests
 import pandas as pd
-import time
+# import time
 from scraper_helper import Scraper
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -12,11 +12,11 @@ from pathlib import Path
 
 # Create a path to where we are running this script from to find data files:
 REL_FILE_PATH = Path(__file__, "../").resolve()
-CONSOLE = "nintendo-64"
+CONSOLE = "nes"
 WEBSITE = "https://www.pricecharting.com"
 URL = f"https://www.pricecharting.com/console/{CONSOLE}?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-21&show-images=true"
 
-# Create Scraper object for NES console to scroll to bottom of the page.
+# Create Scraper object for CONSOLE to scroll to bottom of the page.
 console_scrape = Scraper(CONSOLE)
 console_scrape.scroll_to_bottom()
 html = console_scrape.get_page_source()
@@ -56,7 +56,7 @@ print(len(games_list))
 game_data = []
 print("Scraping data...")
 for i in range(0, len(games_list)):
-    print(f"Scraping for game #: {i:04}")
+    print(f"Scraping for game #: {i:04}: {games_list[i]['title']}")
     session_object = requests.Session()
     response = session_object.get(games_list[i]["url"])
     # response.raise_for_status()
@@ -70,14 +70,16 @@ for i in range(0, len(games_list)):
         "Developer": game_soup.find("td", itemprop="author").getText(strip=True),
         "Genre": game_soup.find("td", itemprop="genre").getText(strip=True),
         "UPC": game_soup.find("td", itemprop="value").getText(strip=True),
+        "PriceCharting_ID": game_soup.find("td", class_="title", string="PriceCharting ID:").findNextSibling().getText(strip=True),
+        "Description": game_soup.find("td", itemprop="description").getText(strip=True),
         "URL": games_list[i]["url"],
-        # "PriceCharting_ID": game_soup.find("td", class_="title", text="PriceCharting ID:").find_next_sibling(name="td", class_="details", strip=True).getText(),
     })
     # time.sleep(2)
 
-# print(game_data)
-
+# Create DataFrame to save data to CSV:
 df = pd.DataFrame(game_data)
+# Add column in DataFrame for the current CONSOLE:
+df.insert(0, "Platform", CONSOLE)
 print(df.head())
 
 # Save df with all game data to a csv file:
