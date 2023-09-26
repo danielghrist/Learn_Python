@@ -9,10 +9,13 @@ from scraper_helper import Scraper
 from bs4 import BeautifulSoup
 from pathlib import Path
 
+### ----- LIST OF PLATFORM NAMES ----- ###
+# ["nes", "super-nintendo", "gameboy", "nintendo-64", "gameboy-advance", "", "sega-game-gear", "nintendo-ds", "nintendo-3ds"]
+### ----- ENDLIST OF PLATFORM NAMES ----- ###
 
 # Create a path to where we are running this script from to find data files:
 REL_FILE_PATH = Path(__file__, "../").resolve()
-CONSOLE = "nes"
+CONSOLE = "gameboy"
 WEBSITE = "https://www.pricecharting.com"
 URL = f"https://www.pricecharting.com/console/{CONSOLE}?sort=name&genre-name=&exclude-variants=true&exclude-hardware=true&when=none&release-date=2023-09-21&show-images=true"
 
