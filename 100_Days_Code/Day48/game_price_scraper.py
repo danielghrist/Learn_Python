@@ -23,7 +23,7 @@ URL = f"https://www.pricecharting.com/console/{CONSOLE}?sort=name&genre-name=&ex
 # Get current date as a string in YYYY_MM_DD format:
 def getStringDate() -> str:
     '''Returns the current date in YYYY_MM_DD format.'''
-    return datetime.today().strftime("%Y-%m-%d")
+    return datetime.today().strftime("%Y_%m_%d")
 
 
 # Get Chrome options and set up brower to not auto close:
@@ -61,6 +61,7 @@ game_data_row = driver.find_elements(
 
 # Loop through each row and extract image, title, loose price, cib_price, and new_price
 for row in game_data_row:
+    price_charting_id = row.get_attribute("data-product")
     # Find the URL of the thumbnail view of a game image:
     image_src = row.find_element(
         By.CSS_SELECTOR, "td div img.photo").get_property("src")
@@ -74,11 +75,12 @@ for row in game_data_row:
     ### DEBUG PRINT ###
     # Add data for each game to game_dict dictionary:
     game_price_list.append({
-        "image_link": image_src,
+        "PC_ID": price_charting_id,
         "title": title,
         "loose_price": loose_price,
         "cib_price": cib_price,
-        "new_price": new_price
+        "new_price": new_price,
+        "image_link": image_src,
     })
 
 game_df = pd.DataFrame(game_price_list)

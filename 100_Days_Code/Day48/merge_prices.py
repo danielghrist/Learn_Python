@@ -18,7 +18,7 @@ collection = pd.read_csv(REL_FILE_PATH.joinpath(
     "iCollect Everything All-2022_01_13.csv"))
 
 # Load pricing data as Pandas Dataframe:
-pricing = pd.read_csv(REL_FILE_PATH.joinpath("2023-09-10-Wii-Price_List.csv"))
+pricing = pd.read_csv(REL_FILE_PATH.joinpath("2023_09_10-Wii-Price_List.csv"))
 
 # Create DataFrame which only includes the CONSOLE I want to view prices for:
 console_collection = collection.query(f"Platform == '{CONSOLE}'").reset_index()
@@ -102,4 +102,4 @@ print(merged_with_prices["title"].isna().value_counts())
 
 # Save merged DataFrame into CSV:
 merged_with_prices[["Platform", "Merged_Title",
-                    "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}_Collection_Pricing.csv"))
+                    "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}-Collection_Pricing.csv"))
