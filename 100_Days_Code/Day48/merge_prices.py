@@ -13,12 +13,15 @@ CONSOLE = "Wii"
 # Create a path to where we are running this script from to find data files:
 REL_FILE_PATH = Path(__file__, "../").resolve()
 
+# Create constants for csv files to read in:
+PRICING_FILE_NAME = "2023_09_30-Wii-Price_List.csv"
+COLLECTION_FILE_NAME = "2023_09_30-iCollect Everything Collection.csv"
+
 # Load personal collection data as Pandas DataFrame:
-collection = pd.read_csv(REL_FILE_PATH.joinpath(
-    "iCollect Everything All-2022_01_13.csv"))
+collection = pd.read_csv(REL_FILE_PATH.joinpath(COLLECTION_FILE_NAME))
 
 # Load pricing data as Pandas Dataframe:
-pricing = pd.read_csv(REL_FILE_PATH.joinpath("2023_09_10-Wii-Price_List.csv"))
+pricing = pd.read_csv(REL_FILE_PATH.joinpath(PRICING_FILE_NAME))
 
 # Create DataFrame which only includes the CONSOLE I want to view prices for:
 console_collection = collection.query(f"Platform == '{CONSOLE}'").reset_index()
@@ -96,10 +99,17 @@ merged_with_prices = pd.merge(
 #       "loose_price", "cib_price", "new_price"]])
 
 filt = merged_with_prices["title"].isna()
-print(merged_with_prices.loc[filt, ["Title", "Merged_Title", "cib_price"]])
+print(merged_with_prices.loc[filt, [
+      "title", "Title", "Merged_Title", "cib_price"]])
 print(merged_with_prices["title"].isna().value_counts())
+print(merged_with_prices["Title"].isna().value_counts())
+print(pricing[["title", "Merged_Title"]])
 
+merged_with_prices.loc[merged_with_prices["PC_ID"].isna(), 'PC_ID'] = 0
+# merged_with_prices.loc[merged_with_prices["PC_ID"].str.contains(
+# ".0"), 'PC_ID'.replace(".0", "")] = merged_with_prices["PC_ID"].replace(".0", "")
+merged_with_prices["PC_ID"] = merged_with_prices["PC_ID"].astype(dtype='str')
 
 # Save merged DataFrame into CSV:
-merged_with_prices[["Platform", "Merged_Title",
-                    "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}-Collection_Pricing.csv"))
+merged_with_prices[["Platform", "PC_ID", "Merged_Title",
+                    "loose_price", "cib_price", "new_price"]].to_csv(REL_FILE_PATH.joinpath(f"{CONSOLE}-Collection_Pricing.csv"), lineterminator="\n", encoding="utf8")

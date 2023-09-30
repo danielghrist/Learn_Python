@@ -87,6 +87,6 @@ print(df.head())
 
 # Save df with all game data to a csv file:
 df.to_csv(REL_FILE_PATH.joinpath(
-    f"{console_scrape.get_string_date()}-{console_scrape.get_console()}-Game_List.csv"))
+    f"{console_scrape.get_string_date()}-{console_scrape.get_console().title()}-Game_List.csv"))
 
 print("Finished Scraping and saving to csv file.")
